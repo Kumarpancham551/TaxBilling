@@ -1,4 +1,6 @@
 const express = require('express');
+const { connect } = require("./src/config/database");
+const User = require('./src/models/user');
 const apiRouter = require("./src/routes/index");
 const app = express();
 
@@ -14,6 +16,11 @@ app.get('/' , (req,res)=>{
     })
 })
 
-app.listen(3000, ()=>{
+app.listen(3000, async ()=>{
+ 
+ await connect();
  console.log('serever started sucessfully');
+ console.log("Mongo db connected successfully")
+
+ 
 })
