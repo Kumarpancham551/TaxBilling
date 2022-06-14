@@ -22,5 +22,7 @@ app.listen(3000, async ()=>{
  console.log('serever started sucessfully');
  console.log("Mongo db connected successfully")
 
- 
+ let user = await User.create({email:"abcd@gmail.com",password:"1234567",username:"ABC"});
+ console.log(user);
+
 })
